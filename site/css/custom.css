@@ -17,6 +17,11 @@
   max-height: 75px;
 }
 
+/* TESTIMONIALS */
+.parallax-content {
+  background: rgba(0, 0, 0, 0.3);
+}
+
 /* OUR STAFF */
 .box-team-creative img {
   width: 370px;
