@@ -1,0 +1,135 @@
+/*
+*
+* Offsets
+*/
+
+// Elements offset
+* + p {
+	margin-top: 15px;
+}
+
+// Headings
+
+// Headings + Paragraph
+h2 + p,
+.heading-2 + p {
+	margin-top: 12px;
+}
+
+// Paragraph + Headings
+p + h2,
+p + .heading-2 {
+	margin-top: 15px;
+}
+
+// Tags + Tags
+p + p {
+	margin-top: 12px;
+}
+p.big + p {
+	margin-top: 17px;
+}
+
+img + p {
+	margin-top: 15px;
+}
+.divider-lg + p {
+	margin-top: 30px;
+}
+h3 + img {
+	margin-top: 42px;
+}
+
+// Classes
+* + .row {
+	margin-top: 30px;
+}
+
+.block-image + p {
+	margin-top: 30px;
+}
+* + .big {
+	margin-top: 20px;
+}
+
+* + .text-block {
+	margin-top: 30px;
+}
+
+* + .button {
+	 margin-top: 40px;
+}
+
+* + .form-comment {
+	margin-top: 45px;
+}
+
+* + .button-link {
+	margin-top: 30px;
+}
+
+* + .owl-carousel {
+	margin-top: 30px;
+}
+
+// Classes + Tags
+.row + h3,
+.row + .heading-3 {
+	margin-top: 80px;
+}
+
+// Classes + Classes
+.container + .container {
+	margin-top: 35px;
+}
+.container + .container-fluid {
+	margin-top: 35px;
+}
+.row + .row {
+	margin-top: 35px;
+}
+
+// Media offsets
+@include media-breakpoint-up(xl) {
+	* + .rd-form {
+		margin-top: 30px;
+	}
+
+	.container + .container {
+		margin-top: 60px;
+	}
+	.row + .row {
+		margin-top: 60px;
+	}
+}
+
+// Range spacing
+.row-0 {
+	@include grid-offset(0px);
+}
+
+.row-15 {
+	@include grid-offset(15px);
+}
+
+.row-20 {
+	@include grid-offset(20px);
+}
+
+.row-30 {
+	@include grid-offset(30px);
+}
+
+.row-40 {
+	@include grid-offset(40px);
+}
+
+.row-50 {
+	@include grid-offset(50px);
+}
+
+@include media-breakpoint-up(lg) {
+	.row-md-30 {
+		@include grid-offset(30px);
+	}
+}

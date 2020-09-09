@@ -1,0 +1,102 @@
+/*
+*
+* Typography
+*/
+
+//
+// Body
+//
+body {
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	font-weight: $font-weight-base;
+	color: $body-color;
+	background-color: $body-bg;
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+
+
+.heading-title {
+	font-family: $font-family-sec;
+}
+
+.heading-decorate {
+	.divider {
+		display: none;
+		vertical-align: super;
+		padding-right: 15px;
+		&:after {
+			height: 3px;
+			width: 75px;
+		}
+	}
+	@include media-breakpoint-up(md) {
+		.divider {
+			display: inline-block;
+		}
+	}
+}
+
+
+
+//
+// Emphasis
+//
+small,
+.small {
+	display: block;
+	font-size: $font-size-sm;
+	line-height: $line-height-sm;
+	
+}
+
+mark,
+.mark {
+	padding: 3px 5px;
+	color: $white-invariable;
+	background: $primary;
+}
+
+// Big text
+.big {
+	font-size: $font-size-lg;
+	line-height: $line-height-lg;
+}
+
+.lead {
+	font-size: $lead-font-size;
+	line-height: $lead-line-height;
+	font-weight: $lead-font-weight;
+}
+
+code {
+	padding: $code-padding-y $code-padding-x;
+	border-radius: $border-radius-sm;
+	font-size: $code-font-size;
+	color: $code-color;
+	background: $code-bg;
+}
+
+//
+// Paragraph
+//
+p {
+	[data-toggle='tooltip'] {
+		padding-left: .25em;
+		padding-right: .25em;
+		color: $gray-1;
+	}
+
+	[style*='max-width'] {
+		display: inline-block;
+	}
+}
+
+
+//
+.hidden {
+	display: none;
+}

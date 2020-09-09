@@ -1,0 +1,22 @@
+mixin post-modern(obj)
+	.post-modern
+		.author-block
+			p= obj.date
+			figure.author-img
+				+jpg(obj.imgAuthor)
+			h5= obj.authorName
+		.post-modern-body
+			.post-modern-img 
+				a(href='blog-post.html')
+					+jpg(obj.img)
+				ul.tag-list
+					each tag in obj.tags
+						li: a(href="#")=tag
+			.post-modern-caption
+				h4.post-modern-title: a(href='blog-post.html')= obj.title
+				block
+				ul.post-modern-meta-list
+					li.time= obj.time
+					li by
+						=' '
+						a(href='#')= obj.author

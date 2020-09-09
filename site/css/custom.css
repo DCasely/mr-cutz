@@ -1,0 +1,30 @@
+.swiper-white-content .swiper-slide-caption p {
+  color: #fff;
+}
+
+.footer-brand img {
+  width: 75px;
+}
+
+.brand-dark {
+  width: 25px;
+}
+
+.rd-navbar-sidebar .rd-navbar-brand img {
+  width: auto;
+  height: auto;
+  max-width: 75px;
+  max-height: 75px;
+}
+
+/* OUR STAFF */
+.box-team-creative img {
+  width: 370px;
+  height: 480px;
+}
+
+/* GALLERY */
+#gallery .carousel-img img {
+  width: 640px;
+  height: 380px;
+}

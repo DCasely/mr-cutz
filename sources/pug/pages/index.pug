@@ -1,0 +1,438 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-pagination
+include ../components/_ui-post-classic
+include ../components/_ui-gallery-item
+include ../components/_ui-quote-modern
+include ../components/_ui-team-corporate
+include ../components/_ui-inline-subscribe-form
+
+block variables
+	- var activeCategory = 'home'
+	- var pageName = 'Tattoo Salon'
+	- var codedBy = true
+block page
+	// Page Header
+	header.section.page-header.header-sidebar
+		// RD Navbar
+		.rd-navbar-wrap
+			nav.rd-navbar(data-layout=                'rd-navbar-fixed'
+			data-sm-layout=             'rd-navbar-fixed'
+			data-md-layout=             'rd-navbar-fixed'
+			data-md-device-layout=      'rd-navbar-fixed'
+			data-lg-layout=             'rd-navbar-sidebar'
+			data-lg-device-layout=      'rd-navbar-fixed'
+			data-xl-layout=             'rd-navbar-sidebar'
+			data-xxl-layout=             'rd-navbar-sidebar'
+			data-xl-device-layout=      'rd-navbar-sidebar'  data-md-stick-up-offset="80px" data-lg-stick-up-offset="46px" data-md-stick-up='true' data-lg-stick-up='true')
+				.rd-navbar-main-outer
+					.rd-navbar-main
+						// RD Navbar Panel
+						.rd-navbar-panel
+							// RD Navbar Toggle
+							button.rd-navbar-toggle.rd-navbar-toggle-modern(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+								span.button-line
+
+							// RD Navbar Brand
+							.rd-navbar-brand
+								h3.rd-navbar-brand-name
+									a(href='index.html')
+										+png('logo-white-182x41')(class='brand-light')
+										+png('logo-dark-182x41')(class='brand-dark')
+
+						.rd-navbar-main-element
+							.rd-navbar-nav-wrap
+								include ../includes/_navigation
+
+	// Swiper
+	section.section.swiper-container.swiper-slider.swiper-slider-2.swiper-arrow-white.slider-scale-effect.swiper-white-content.swiper-slider-with-info#home(data-loop='false' data-autoplay='5500' data-simulate-touch="false" data-slide-effect='fade' data-type='anchor')
+		.swiper-wrapper.text-centerALLERY
+			.swiper-slide
+				.slide-bg(style='background-image: url("images/slide-1-1920x880.jpg")' )
+				.swiper-slide-caption.section-lg
+					.container
+						.row.justify-content-center
+							.col-sm-10.col-lg-11
+								.slider-logo( data-caption-animate='fadeInUp', data-caption-delay='100' )
+									+png('brand-1-152x78')
+								h1( data-caption-animate='fadeInUp', data-caption-delay='100' ) fully certified and safe tattooing
+								.divider-lg( data-caption-animate='fadeIn', data-caption-delay='650' )
+								p.lead.block-lg( data-caption-animate='fadeInUp', data-caption-delay='250' ) Our tattooists use 100% safe technology to create stunning artworks. They use certified equipment, which guarantees the best possible results.
+								a.button.button-default-outline( href='#', data-caption-animate='fadeInUp', data-caption-delay='450') Book Now
+
+			.swiper-slide
+				.slide-bg(style='background-image: url("images/slide-2-1920x880.jpg")' )
+				.swiper-slide-caption.section-lg
+					.container
+						.row.justify-content-center
+							.col-sm-10.col-lg-11
+								.slider-logo( data-caption-animate='fadeInUp', data-caption-delay='100' )
+									+png('brand-2-152x78')
+								h1( data-caption-animate='fadeInUp', data-caption-delay='100' ) Welcome To Our tattoo salon
+								.divider-lg( data-caption-animate='fadeIn', data-caption-delay='650' )
+								p.lead.block-lg( data-caption-animate='fadeInUp', data-caption-delay='250' ) Our tattoo salon is a home for talented tattoo artists ready to turn your body into a canvas with beautiful pictures on it. We are ready to change your look completely to help you stand out from the crowd.
+								a.button.button-default-outline( href='#', data-caption-animate='fadeInUp', data-caption-delay='450') Book Now
+
+			.swiper-slide
+				.slide-bg(style='background-image: url("images/slide-3-1920x880.jpg")' )
+				.swiper-slide-caption.section-lg
+					.container
+						.row.justify-content-center
+							.col-sm-10.col-lg-11
+								.slider-logo( data-caption-animate='fadeInUp', data-caption-delay='100' )
+									+png('brand-3-152x78')
+								h1( data-caption-animate='fadeInUp', data-caption-delay='100' ) providing extensive tattoo services
+								.divider-lg( data-caption-animate='fadeIn', data-caption-delay='650' )
+								p.lead.block-lg( data-caption-animate='fadeInUp', data-caption-delay='250' ) Since 1999, our salon has been providing artistic tattoo design, consulting and body piercing services for everyone. Our skilled tattoo artists are always ready to help you get a brand new look.
+								a.button.button-default-outline( href='#', data-caption-animate='fadeInUp', data-caption-delay='450') Book Now
+
+
+		.swiper-pagination
+		.swiper-block-info
+			.swiper-block-info-item
+				span.text-primary.font-weight-bold Free Call:
+				a(href='tel:#') (073) 123-12-12
+			.swiper-block-info-item
+				span.text-primary.font-weight-bold Opening Hours:
+				span 10 am-8 pm, Mn-Fr
+		.swiper-button-prev
+		.swiper-button-next
+
+	section.section.section-lg.bg-gray-100#about(data-type='anchor')
+		.container
+			.row.row-50.align-items-lg-center.justify-content-xl-between
+				.col-lg-6
+					.box-images-classic
+						.row.row-30
+							.col-6
+								.box-image-item(data-parallax-scroll='{"y": -40,   "smoothness": 30 }')
+									+jpg('home-1-270x289')
+
+							.col-6
+								.box-image-item(data-parallax-scroll='{"y": 40,   "smoothness": 30 }')
+									+jpg('home-2-270x289')
+				.col-lg-6.col-xl-5
+					.block-xs
+						h2 A Few Words
+							br.d-none.d-sm-inline
+							| About Our Salon
+						.divider-lg
+						p.big.text-gray-800 We have been numerously recognized #1 tattoo salon in Los Angeles. We aim to deliver the best tattooing services.
+						p Our staff consistently upgrades their ability and knowledge through training and seminars to ensure your tattoo or piercing is performed using the latest industry standards.
+						a.button.button-default-outline(href='#') read more
+	section.section.section-md.bg-default.text-center
+		.container
+			h2
+
+	section.section.section-lg.bg-default.text-center#services(data-type='anchor')
+		.container
+			h2 Our Services
+			.divider-lg
+			p.block-sm Our team provides quality and original tattoo art using advanced sterilization techniques, produced in a comfortable and safe environment by professionals.
+		.container
+			.row.row-50
+				.col-sm-6.col-lg-3
+					.box-icon-minimal
+						.box-icon-minimal-header
+							include ../includes/_svg-icon-14
+							p.box-icon-minimal-title: a(href='#') Tattooing
+						.box-icon-minimal-text
+							p For a premium result, at our tattoo salon we combine modern techniques with traditional ones.
+				.col-sm-6.col-lg-3
+					.box-icon-minimal
+						.box-icon-minimal-header
+							include ../includes/_svg-icon-15
+							p.box-icon-minimal-title: a(href='#') Piercing
+						.box-icon-minimal-text
+							p Want some extra holes in your body? Our piercing masters will make some for you.
+				.col-sm-6.col-lg-3
+					.box-icon-minimal
+						.box-icon-minimal-header
+							include ../includes/_svg-icon-16
+							p.box-icon-minimal-title: a(href='#') Tattoo Cover Up
+						.box-icon-minimal-text
+							p Got some old tattoos that you don’t find pretty? Our talented artists will cover them up for you.
+				.col-sm-6.col-lg-3
+					.box-icon-minimal
+						.box-icon-minimal-header
+							include ../includes/_svg-icon-17
+							p.box-icon-minimal-title: a(href='#') Tattoo Design
+						.box-icon-minimal-text
+							p Nothing can beat the challenge of creating a design that initially is only in your imagination.
+
+	section.section.section-lg.bg-gray-100
+		.container
+			.row.row-50
+				.col-lg-6
+					.block-xs
+						h2.heading-decorate Works of Our
+							=' '
+							br
+							span.divider
+							| Tattooists
+						p.big.text-gray-800 All our team members create impressive tattoos, whether they are custom-designed or not.
+						p In our gallery, you can look at the latest and the most popular works of our specialists. It also includes the best moments and insights on how we make our visitors’ dreams come true. Feel free to check out our gallery of tattoos works and projects of our team members by clicking the link below.
+
+						a.button-link.button-link-icon(href='#') See All Works
+							span.icon.fa-arrow-right.icon-primary
+				.col-lg-6
+					// Owl Carousel
+					.block-sm
+						.owl-carousel.carousel-modern(data-items='1', data-dots='true' data-nav='false' data-stage-padding='0', data-loop='false', data-margin='0', data-mouse-drag="false")
+							+jpg('home-3-549x432')
+							+jpg('home-4-549x432')
+							+jpg('home-5-549x432')
+
+
+	+parallax({
+		img: 'images/parallax-8-1920x1130.jpg',
+		innerClass: 'section-lg text-center context-dark'
+	})
+		.container#testimonials(data-type='anchor')
+			h2 Testimonials
+			.divider-lg
+
+			// Owl Carousel
+			.owl-carousel(data-items='1', data-dots='true' data-nav='false' data-stage-padding='15', data-loop='false', data-margin='30', data-mouse-drag="false")
+				+quote-modern({
+					img: 'user-5-90x90',
+					title: 'Edwin Smith',
+					subTitle: 'Client'
+				})
+					p I visited Tattoo about a month ago to get a tattoo. It has a very laid-back atmosphere while also staying very professional. Everyone was very nice and welcoming. Walter is not just an awesome artist, but a pretty cool guy to hang out with while being tattooed.
+				+quote-modern({
+					img: 'user-2-90x90',
+					title: 'Janice Bradley',
+					subTitle: 'Client'
+				})
+					p If there is a place in my city where I would like to be tattooed next time, it is your tattoo studio. You guys are doing amazing job spreading the quality tattoos in the area, and I really like what you do! I will definitely tell my friends about your studio and your artists!
+				+quote-modern({
+					img: 'user-3-90x90',
+					title: 'Ann Smith',
+					subTitle: 'Client'
+				})
+					p Tattoo is a place where you can get a high-quality tattoo, and even order a custom design based on your wishes and expectations. This is exactly what I received during my first visit to the salon, and I will certainly come here again to have another tattoo done.
+
+	section.section.section-lg.bg-default.text-center#team(data-type='anchor')
+		.container
+			h2 Our Staff
+			.divider-lg
+			.row.row-50
+				.col-md-6.col-lg-4
+					.box-team-creative
+						figure.box-team-creative-img
+							a(href='#')
+								+jpg('team-creative-1-370x480')
+						.box-team-creative-caption
+							h4.box-team-creative-title: a(href='#')  Charles Wade
+							p Tattoo Master, Founder
+							ul.list-inline.social-list
+								li: a.icon.fa-facebook(href='#')
+								li: a.icon.fa-twitter(href='#')
+								li: a.icon.fa-instagram(href='#')
+								li: a.icon.fa-pinterest-p(href='#')
+				.col-md-6.col-lg-4
+					.box-team-creative
+						figure.box-team-creative-img
+							a(href='#')
+								+jpg('team-creative-2-370x480')
+						.box-team-creative-caption
+							h4.box-team-creative-title: a(href='#')  Henry Richard
+							p Tattoo Master
+							ul.list-inline.social-list
+								li: a.icon.fa-facebook(href='#')
+								li: a.icon.fa-twitter(href='#')
+								li: a.icon.fa-instagram(href='#')
+								li: a.icon.fa-pinterest-p(href='#')
+				.col-md-6.col-lg-4
+					.box-team-creative
+						figure.box-team-creative-img
+							a(href='#')
+								+jpg('team-creative-3-370x480')
+						.box-team-creative-caption
+							h4.box-team-creative-title: a(href='#')  Walter Evans
+							p Junior Tattoo Master
+							ul.list-inline.social-list
+								li: a.icon.fa-facebook(href='#')
+								li: a.icon.fa-twitter(href='#')
+								li: a.icon.fa-instagram(href='#')
+								li: a.icon.fa-pinterest-p(href='#')
+
+				.col-12
+					a.button.button-default-outline(href='#') View all team
+
+	section.section#gallery(data-type='anchor')
+		.container
+			.row.align-items-end
+				.col-sm-6
+					h2 Gallery
+					.divider-lg
+				.col-sm-6
+					p.text-right
+						a.button-link.button-link-icon(href='#') View All gallery
+							span.icon.fa-arrow-right.icon-primary
+
+		// Owl Carousel
+		.owl-carousel.carousel-arrow-circle-modern.owl-outer-padding-none(data-items='1', data-sm-items='2', data-md-items='3' data-dots='false' data-nav='true' data-stage-padding='0', data-loop='false', data-margin='0', data-mouse-drag="false" data-lightgallery='group')
+			.carousel-img
+				a(data-lightgallery='item' href='images/gallery-1-original-1200x800.jpg')
+					+jpg('gallery-1-640x380')
+			.carousel-img
+				a(data-lightgallery='item' href='images/gallery-2-original-1200x824.jpg')
+					+jpg('gallery-2-640x380')
+			.carousel-img
+				a(data-lightgallery='item' href='images/gallery-3-original-1200x800.jpg')
+					+jpg('gallery-3-640x380')
+			.carousel-img
+				a(data-lightgallery='item' href='images/gallery-4-original-1200x800.jpg')
+					+jpg('gallery-4-640x380')
+			.carousel-img
+				a(data-lightgallery='item' href='images/gallery-5-original-1200x800.jpg')
+					+jpg('gallery-5-640x380')
+			.carousel-img
+				a(data-lightgallery='item' href='images/gallery-6-original-1200x832.jpg')
+					+jpg('gallery-6-640x380')
+
+	section.section.section-md.bg-default.text-center#pricing(data-type='anchor')
+		.container
+			h2 Pricing
+			.divider-lg
+			p.block-sm We offer affordable pricing policy for you to experience the best tattooing services at great prices. They include various types of tattoos and piercings for all kinds of our clients.
+			.row.justify-content-center
+				.col-sm-10.col-lg-12
+					.pricing-list-classic
+						.pricing-classic-item
+							.pricing-classic-body
+								h4 Creative Tattoos
+								p 60 – 100 Minute Session
+							.price-value
+								h3 $40.00
+						.pricing-classic-item
+							.pricing-classic-body
+								h4 Restorative Tattoos
+								p 30 – 40 Minute Session
+							.price-value
+								h3 $35.00
+						.pricing-classic-item
+							.pricing-classic-body
+								h4 Fineline Tattoos
+								p 40 – 60 Minute Session
+							.price-value
+								h3 $30.00
+						.pricing-classic-item
+							.pricing-classic-body
+								h4 Traditional Tattoos
+								p 90 – 120 Minute Session
+							.price-value
+								h3 $55.00
+						.pricing-classic-item
+							.pricing-classic-body
+								h4 Custom Tattoos
+								p 50 – 60 Minute Session
+							.price-value
+								h3 $34.00
+						.pricing-classic-item
+							.pricing-classic-body
+								h4 Laser Tattoo Removals
+								p 20 – 30 Minute Session
+							.price-value
+								h3 $42.00
+						.pricing-classic-item
+							.pricing-classic-body
+								h4 Microblading
+								p 15 – 30 Minute Session
+							.price-value
+								h3 $38.00
+						.pricing-classic-item
+							.pricing-classic-body
+								h4 Tattoo Cover-Up
+								p 80 – 100 Minute Session
+							.price-value
+								h3 $65.00
+
+			a.button.button-default-outline(href='#') View More
+
+	+parallax({
+		img: 'images/parallax-1-1920x770.jpg',
+		innerClass: 'section-lg context-dark text-center'
+	})
+		.container
+			.row.justify-content-md-center.row-30
+				.col-md-9.col-lg-8
+					h2 Subscribe to Our Newsletter
+					.divider-lg
+					p.big Be the first to know about our promotions and discounts!
+				.col-md-9.col-lg-6
+					+inline-subscribe-form({})
+
+
+	section.section.bg-default#contacts(data-type='anchor')
+		.container
+			.row.align-items-lg-end.justify-content-xl-between
+				.col-lg-6.col-xl-5
+					.section-md
+						h2 Get In Touch
+						.divider-lg
+						p Have any questions? Feel free to use the contact form below to get in touch with us. We will answer you as soon as possible!
+						form.rd-form.rd-mailform.rd-form-icon(data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php')
+
+							.form-wrap
+								input#contact-name.form-input(type='text' name='name' data-constraints='@Required')
+								label.form-label(for='contact-name') Your Name
+								span.icon.mercury-icon-user.input-icon
+							.form-wrap
+								input#contact-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+								label.form-label(for='contact-email') Your Email
+								span.icon.mercury-icon-e-mail.input-icon
+							.form-wrap
+								input#contact-phone.form-input(type='text' name='phone' data-constraints='@Numeric')
+								label.form-label(for='contact-phone') Your Phone
+								span.icon.mercury-icon-phone.input-icon
+
+							.form-wrap.textarea-wrap
+								label.form-label(for='contact-message') Your Message
+								textarea#contact-message.form-input(name='message' data-constraints='@Required')
+								span.icon.mercury-icon-pencil.input-icon
+
+							.button-block
+								button.button.button-primary(type='submit') Send
+
+				.col-lg-6.d-none.d-lg-block
+					+jpg('home-5-5-585x875')
+
+	// Google Map
+	section.section
+		.google-map-container(data-zoom='14'
+		data-center='9870 St Vincent Place, Glasgow, DC 45 Fr 45.',
+		data-styles='[{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]'
+		data-marker="images/gmap_marker.png"
+		data-marker-active="images/gmap_marker_active.png"
+		)
+			.google-map
+			ul.google-map-markers
+				li( data-location='9870 St Vincent Place, Glasgow, DC 45 Fr 45.', data-description='9870 St Vincent Place, Glasgow', data-icon='images/gmap_marker.png', data-icon-active='images/gmap_marker_active.png' )
+
+	footer.section.bg-default.section-xs-type-1.footer-minimal
+		.container
+			.row.row-30.align-items-lg-center.justify-content-lg-between
+				.col-lg-2
+					.footer-brand
+						a(href='index.html')
+							+png('logo-dark-182x41')
+				.col-lg-10
+					.footer-nav
+						ul.rd-navbar-nav
+							each item in menu
+								li.rd-nav-item
+									a.rd-nav-link(href=item.link ? item.link : genLink(item.title))=item.title
+
+	section.bg-gray-100.section-xs.text-center
+		.container
+			p.rights&attributes( attributes )
+				span &copy;&nbsp;
+				span.copyright-year
+				span &nbsp;
+				span All Rights Reserved.
+
+

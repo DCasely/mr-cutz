@@ -1,0 +1,172 @@
+/*
+*
+* Footers
+*/
+
+//
+// Footer Classic
+//
+
+.footer-classic {
+	padding: 30px 0;
+	background: $gray-100;
+}
+
+// 
+// Footer minimal
+//
+
+.footer-minimal {
+	text-align: center;
+	.rd-navbar-nav > *{
+		display: inline-block;
+		margin-bottom: 3px;
+	}
+	.rd-nav-link {
+		color: $gray-800;
+		letter-spacing: 0.05em;
+		font-weight: 700;
+		&:hover {
+			color: $primary;
+		}
+	}
+	.active .rd-nav-link {
+		color: $primary;
+	}
+	.rd-navbar-nav {
+		@include spacingX(40px);
+	}
+}
+
+
+
+
+@include media-breakpoint-up(md) {
+	.footer-minimal {
+		.rd-navbar-nav{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			@include spacingX(20px);
+		}
+	}
+	
+}
+@include media-breakpoint-up(lg) {
+	.footer-minimal {
+		text-align: left;
+		.rd-navbar-nav{
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			@include spacingX(40px);
+		}
+	}
+}
+@include media-breakpoint-up(xl) {
+	.footer-minimal {
+		.rd-navbar-nav {
+			@include spacingX(60px);
+		}
+	}
+}
+.footer-minimal.footer-minimal-variant-2 {
+	@include media-breakpoint-up(sm) {
+		.rd-navbar-nav{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	
+}
+
+
+//
+// footer modern
+//
+.footer-modern {
+	.footer-title {
+		font-family: $font-family-sec;
+		color: $gray-800;
+		font-weight: 700;
+		font-size: 21px;
+	}
+	.divider-lg {
+		line-height: 0;
+	}
+	.footer-title + .divider-lg {
+		margin-top: 17px;
+	}
+	.divider-lg + * {
+		margin-top: 20px;
+	}
+	.footer-post + .footer-post {
+		margin-top: 17px;
+	}
+	.footer-post {
+		h5  a {
+			color: $gray-800;
+			&:hover {
+				color: $primary;
+			}
+		}
+		.list-inline {
+			font-style: italic;
+			font-weight: 300;
+			li{
+				padding-right: 5px;
+				color: #c8c8c8;
+				&:after {
+					display: inline-block;
+					content: '/';
+					margin-left: 5px;
+				}
+				&:last-child {
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+		* + .list-inline {
+			margin-top: 5px;
+		}
+	}
+	.list > li + li {
+		margin-top: 5px;
+	}
+
+	.footer-contact-info {
+		li {
+			position: relative;
+			padding-left: 30px;
+			.icon {
+				position: absolute;
+				left: 0;
+				top: 1px;
+				font-size: 24px;
+			}
+			a {
+				color: $gray-500;
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+		li + li {
+			margin-top: 12px;
+		}
+	}
+}
+.social-block-footer {
+	.list-inline{
+		@include spacingX(20px);
+		a {
+			color: #a3a3a3;
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+}

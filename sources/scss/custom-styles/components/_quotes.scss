@@ -1,0 +1,304 @@
+/*
+*
+* Quotes
+*/
+
+//
+// Table of Contents: 
+//
+// Quote primary
+//
+
+//
+// Quote primary
+//
+.quote-primary {
+}
+
+.quote-primary-mark {
+	position: relative;
+	top: 6px;
+	display: block;
+	width: 37px;
+	height: 27px;
+	fill: $primary;
+	flex-shrink: 0;
+}
+
+.quote-primary-body {
+	position: relative;
+	padding: 25px 0;
+	border-top: 1px solid $gray-200;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		height: 13px;
+		border-style: solid;
+		border-color: $gray-200;
+	}
+
+	&::before {
+		left: 0;
+		width: 78px;
+		border-width: 1px 1px 0 0;
+	}
+
+	&::after {
+		right: 0;
+		width: calc(100% - 78px - 12px);
+		border-width: 1px 0 0 1px;
+		transform-origin: 0 0;
+		transform: skew(-45deg);
+	}
+}
+
+.quote-primary-text {
+	padding-top: 20px;
+	color: $gray-700;
+}
+
+.quote-primary-cite {
+	font-weight: 700;
+}
+
+.quote-primary-footer {
+	padding-left: 5px;
+}
+
+* + .quote-primary {
+	margin-top: 40px;
+}
+
+* + .quote-primary-footer {
+	margin-top: 8px;
+}
+
+@include media-breakpoint-up(sm) {
+	.quote-primary-body {
+		display: flex;
+		padding: 32px 20px 40px 30px;
+	}
+
+	.quote-primary-text {
+		padding-top: 0;
+		padding-left: 20px;
+	}
+
+	.quote-primary-footer {
+		padding-left: 30px;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.quote-primary-body {
+		padding-right: 16px;
+	}
+}
+
+//quote with image
+.quote-with-image {
+	max-width: 535px;
+	.quote-caption {
+		position: relative;
+		padding-top: 10px;
+		padding-left: 30px;
+		.quote-text {
+			position: relative;
+			font-style: italic;
+		}
+		svg {
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 0;
+			> * {
+				fill: $gray-9;
+			}
+		}
+	}
+	* + .quote-caption {
+		margin-top: 30px;
+	}
+	@include media-breakpoint-up(lg) {
+		.quote-caption {
+			padding-left: 38px;
+		}
+		* + .quote-caption {
+			margin-top: 50px;
+		}
+	}
+}
+* + .quote-with-image {
+	margin-top: 30px;
+}
+
+// quote corporate
+//
+
+.quote-corporate {
+	position: relative;
+	padding: 40px 30px;
+	max-width: 450px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0 0 22px rgba($black, .1);
+	border-bottom: 4px solid $primary;
+	margin-bottom: 38px;
+	background: $white;
+	
+	.carousel-corporate & {
+		max-width: 700px;
+	}
+	
+	@media (min-width: 1400px) {
+		.carousel-arrow-circle & {
+			max-width: 580px;
+		}
+	}
+	
+	.quote-header {
+		display: flex;
+		align-items: flex-end;
+		> * {
+			margin-right: 15px;
+			margin-top: 0;
+		}
+		h4 {
+			padding-right: 15px;
+			font-weight: 400;
+			border-right: 1px solid #d5d5d5;
+		}
+	}
+	.quote-image {
+		position: absolute;
+		display: inline-block;
+		overflow: hidden;
+		left: 30px;
+		bottom: -40px;
+		border-radius: 50%;
+		box-shadow: 2px 0 9px rgba($black, .1);
+	}
+	.quote-body {
+		text-align: right;
+		.quote-text {
+			text-align: left;
+		}
+	}
+	.quote-body-mark {
+		> * {
+			fill: $gray-2;
+		}
+	}
+	
+	* + .quote-body {
+		margin-top: 25px;
+	}
+	@include media-breakpoint-up(sm) {
+		padding: 40px 60px;
+		.quote-image {
+			left: 60px;
+		}
+		.quote-header {
+			h4 {
+				font-size: 19px;
+			}
+		}
+	}
+	@include media-breakpoint-up(xl) {
+		.quote-header {
+			h4 {
+				font-size: 24px;
+			}
+		}
+	}
+	&.quote-corporate-center-img {
+		.quote-image {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		@include media-breakpoint-up(ld) {
+			padding: 40px 20px;
+			
+		}
+		@include media-breakpoint-up(xl) {
+			padding: 40px 20px 40px 40px;
+		}
+	}
+}
+
+// quote modern
+.quote-modern {
+	
+}
+.quote-modern-text {
+	position: relative;
+	max-width: 650px;
+	padding-top: 60px;
+	margin-left: auto;
+	margin-right: auto;
+	.quote-body-mark {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);  
+		z-index: -1;
+		> * {
+			fill: rgba($black, .08);
+		}
+	}
+}
+.quote-modern-img {
+	img {
+		display: inline-block;
+		border-radius: 50%;
+		
+		box-shadow: 2px 0 9px rgba($black, .23);
+	}
+	
+}
+.quote-modern-caption {
+	.quote-modern-title {
+		text-transform: capitalize;
+		font-weight: 400;
+	}
+	> * + .big {
+		margin-top: 5px;
+	}
+	* + .quote-modern-title {
+		margin-top: 25px;
+	}
+}
+* + .quote-modern-caption {
+	margin-top: 35px;
+}
+
+// quote bordered
+.quote-bordered {
+	.quote-caption {
+		position: relative;
+		padding: 20px 20px 20px 35px;
+		border-top: 1px solid $gray-9;
+		border-bottom: 1px solid $gray-9;
+		.quote-text {
+			position: relative;
+			font-style: italic;
+		}
+		svg {
+			position: absolute;
+			left: 0;
+			top: 14px;
+			z-index: 0;
+			> * {
+				fill: $gray-9;
+			}
+		}
+	}
+	@include media-breakpoint-up(lg) {
+		.quote-caption {
+			padding-left: 48px;
+		}
+	}
+}

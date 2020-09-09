@@ -1,0 +1,147 @@
+//
+//  theme 1 colors
+//
+$gray-800: #151515;
+$primary: #e9b674;
+
+// fonts
+$font-family-serif: 'Oswald',  "Times New Roman", sans-serif;
+$font-family-sans-serif: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-sans-serif-1: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+$font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+$font-family-base: $font-family-sans-serif;
+$font-family-sec: $font-family-serif;
+
+
+// Headings
+$headings-font-family: $font-family-sec;
+$headings-font-weight: 400;
+$headings-line-height: 1.1;
+$headings-color: $gray-800;
+
+// Template Heading Values
+$_h1-fsz: 60;
+$_h2-fsz: 48;
+$_h3-fsz: 32;
+$_h4-fsz: 24;
+$_h5-fsz: 18;
+$_h6-fsz: 14;
+
+$_h1-lh: 72;
+$_h2-lh: 60;
+$_h3-lh: 48;
+$_h4-lh: 30;
+$_h5-lh: 26;
+$_h6-lh: 20;
+
+// ** < Calculated Headings values >
+$h1-font-size: $_h1-fsz * 1px;
+$h2-font-size: $_h2-fsz * 1px;
+$h3-font-size: $_h3-fsz * 1px;
+$h4-font-size: $_h4-fsz * 1px;
+$h5-font-size: $_h5-fsz * 1px;
+$h6-font-size: $_h6-fsz * 1px;
+
+$h1-line-height: ($_h1-lh / $_h1-fsz);
+
+$h2-line-height: ($_h2-lh / $_h2-fsz);
+$h3-line-height: ($_h3-lh / $_h3-fsz);
+$h4-line-height: ($_h4-lh / $_h4-fsz);
+$h5-line-height: ($_h5-lh / $_h5-fsz);
+$h6-line-height: ($_h6-lh / $_h6-fsz);
+
+
+@function headings() {
+	@return unquote("h1, h2, h3, h4, h5, h6, [class^='heading-']");
+}
+
+//
+// Headings
+//
+#{headings()} {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: $headings-font-weight;
+	color: $headings-color;
+	font-family: $headings-font-family;
+	text-transform: uppercase;
+	
+	a {
+		color: inherit;
+		
+		&:hover {
+			color: $primary;
+		}
+	}
+}
+
+h1,
+.heading-1 {
+	font-size: 30px;
+	line-height: 1.5;
+	font-weight: 700;
+	
+	@include media-breakpoint-up(xl) {
+		font-size: $h1-font-size;
+		line-height: $h1-line-height;
+	}
+}
+
+h2,
+.heading-2 {
+	font-size: 28px;
+	line-height: 1.5;
+	letter-spacing: 0;
+	font-weight: 400;
+	
+	@include media-breakpoint-up(xl) {
+		font-size: $h2-font-size;
+		line-height: $h2-line-height;
+	}
+}
+
+
+h3,
+.heading-3 {
+	font-size: 24px;
+	line-height: 1.5;
+	
+	@include media-breakpoint-up(xl) {
+		font-size: $h3-font-size;
+		line-height: $h3-line-height;
+	}
+}
+
+h4,
+.heading-4 {
+	font-size: 22px;
+	line-height: 1.5;
+	font-family: $font-family-base;
+	
+	@include media-breakpoint-up(xl) {
+		font-size: $h4-font-size;
+		line-height: $h4-line-height;
+	}
+}
+
+h5,
+.heading-5 {
+	font-size: $h5-font-size;
+	line-height: $h5-line-height;
+	font-family: $font-family-base;
+	color: $gray-700;
+}
+
+h6,
+.heading-6 {
+	font-size: $h6-font-size;
+	line-height: $h6-line-height;
+	text-transform: uppercase;
+	font-family: $font-family-sans-serif-1;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+}
+
+

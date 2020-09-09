@@ -1,0 +1,16 @@
+mixin post-corporate(obj)
+	.post-corporate
+		.post-corporate-img
+			a(href='blog-post.html')
+				+jpg(obj.img)
+			ul.tag-list 
+				each tag in obj.tags
+					li: a(href="#")=tag
+		.post-corporate-caption
+			h4.post-corporate-title: a(href='blog-post.html')= obj.title
+			block
+			ul.post-corporate-meta-list
+				li.time= obj.time
+				li by
+					=' '
+					a(href='#')= obj.author

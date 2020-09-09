@@ -1,0 +1,50 @@
+/*
+*
+* Contexts
+*/
+
+@mixin context-dark {
+	&,
+	#{headings()} {
+		color: $white;
+	}
+	.divider-lg {
+		&::after {
+			background: $white;
+		}
+	}
+	.rd-form-inline {
+		.form-input, .form-label {
+			color: $white;
+		}
+	}
+	.form-validation {
+		color: $white; 
+	} 
+	
+	.quote-modern {
+		.quote-modern-title {
+			color: #fefefe;
+		}
+		.big {
+			color: #d0d0d0;
+		}
+		.quote-modern-text {
+			color: #d7d7d7;
+			.quote-body-mark {
+				> * {
+					fill: rgba($white, .46)
+				}
+			}
+		} 
+	}
+}
+
+@mixin context-light {
+	color: $body-color;
+
+	#{headings()} {
+		color: $headings-color;
+	}
+}
+

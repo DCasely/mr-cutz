@@ -1,0 +1,141 @@
+/*
+*
+* Backgrounds
+*/
+
+.context-dark {
+	@include context-dark;
+}
+
+%context-dark {
+	@include context-dark;
+
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: none;
+		}
+		.brand-logo-light {
+			display: block;
+		}
+	}
+}
+
+%context-light {
+	@include context-light;
+
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: block;
+		}
+		.brand-logo-light {
+			display: none;
+		}
+	}
+}
+
+/**
+* Light Backgrounds
+*/
+.bg-default {
+	@include bg-behaviour($body-bg);
+}
+
+.bg-gray-100 {
+	 @include bg-behaviour($gray-100);
+	.box-icon-modern .icon-modern {
+		background: $gray-10;
+	}
+}
+
+.bg-gray-11 {
+	@include bg-behaviour($gray-11);
+}
+
+/**
+* Dark Backgrounds
+*/
+.bg-gray-dark {
+	@extend %context-dark;
+	@include bg-behaviour($gray-700);
+}
+
+/** 
+* Accent Backgrounds
+*/
+.bg-primary {
+	background: $primary;
+	@extend %context-dark;
+	& + & {
+		padding-top: 0;
+	}
+	.button-primary {
+		@include btn-variant($primary, $white, $white, $white, $primary, $white);
+	}
+	.form-validation {
+		color: $white;
+	}
+	.rd-form-inline {
+		.form-input {
+			line-height: 22px;
+			border: 2px solid $white;
+		}
+	}
+	
+}
+
+/**
+* Background Image
+*/
+.bg-image {
+
+}
+
+[class^='bg-'] {
+	background-size: cover;
+	background-position: center center;
+}
+
+// Desktop only
+//
+html:not(.tablet):not(.mobile) {
+	.bg-fixed {
+		@include media-breakpoint-up(lg) {
+			background-attachment: fixed;
+		}
+	}
+}
+
+.mbYTP_wrapper {
+	position: relative;
+	background: linear-gradient(to bottom, $primary, $secondary);
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		//background: rgba($gray-800, .65);
+		background: linear-gradient(to bottom, $primary, $secondary);
+		opacity: .4;
+		z-index: 1;
+	}
+}
+
+.video-bg-overlay {
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		//background: rgba($gray-800, .65);
+		background: linear-gradient(to bottom, $primary, $secondary);
+		opacity: .4;
+		z-index: 1;
+	}
+}

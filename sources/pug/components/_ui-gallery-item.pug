@@ -1,0 +1,5 @@
+mixin gallery-item(obj)
+	a.gallery-item(data-lightgallery="item" href=obj.imgOriginal)
+		+jpg(obj.img)
+		span.gallery-item-title= obj.title
+		span.gallery-item-button

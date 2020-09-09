@@ -1,0 +1,131 @@
+/**
+*
+* RD Navbar Classic
+* =====================================================
+*/
+.rd-navbar-classic-center {
+	// Static
+	&.rd-navbar-static {
+		border-bottom: 1px solid transparent;
+
+		.rd-navbar-panel {
+			display: none;
+		}
+		
+		.rd-navbar-aside-outer,
+		.rd-navbar-main-outer {
+			padding-left: $grid-gutter-width / 2;
+			padding-right: $grid-gutter-width / 2;
+		}
+
+		.rd-navbar-aside-outer {
+			background: $primary;
+			
+		}
+		
+		.rd-navbar-aside,
+		.rd-navbar-main {
+			max-width: $rd-navbar-static-width;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.rd-navbar-aside {
+			padding: 12px 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			color: $white;
+
+			.header-info {
+				.list-inline {
+					@include spacingX(80px);
+				}
+				.unit-body {
+					color: rgba($white, .75);
+				}
+				a {
+					font-size: 15px;
+					color: rgba($white, .75);
+					&:hover {
+						color: $white;
+					}
+				}
+			}
+			
+			.social-block {
+				.list-inline {
+					@include spacingX(22px);
+				}
+				a {
+					font-size: 15px;
+					color: rgba($white, .75);
+					&:hover {
+						color: $white;
+					}
+				}
+			}
+		}
+		
+		
+		
+		
+		.rd-navbar-main {
+			position: relative;
+			display: block;
+			padding: 20px 0;
+		}
+
+		// RD Navbar Brand
+		.rd-navbar-brand {
+			img {
+				width: auto;
+				height: auto;
+				max-width: 200px;
+				max-height: 200px;
+			}
+		}
+
+		.rd-navbar-nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		
+		.rd-navbar-main-element {
+			display: block;
+		}
+
+		&.rd-navbar--is-stuck,
+		&.rd-navbar--is-clone {
+			border-bottom-color: nth($rd-navbar-border, 3);
+			.rd-navbar-aside-outer {
+				display: none;
+			}
+
+			.rd-navbar-main {
+				padding: 2px 0;
+			}
+
+			.rd-navbar-nav-item {
+				> .rd-navbar-submenu {
+					margin-top: 17px;
+				}
+			}
+		}
+
+		.rd-nav-item + .rd-nav-item {
+			margin-left: 0;
+		}
+		
+	}
+
+	// Fixed 
+	&.rd-navbar-fixed {
+		.rd-navbar-nav {
+			.rd-nav-brand {
+				display: none;
+			}
+		}
+	}
+}

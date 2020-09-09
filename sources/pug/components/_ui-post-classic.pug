@@ -1,0 +1,12 @@
+mixin post-classic(obj)
+	.post-classic
+		figure.post-classic-img
+			a(href='blog-post.html')
+				+jpg(obj.img)
+		.post-classic-caption
+			h4.post-classic-title: a(href='blog-post.html')= obj.title
+			ul.post-classic-meta-list
+				li.time= obj.time
+				li by
+					=' '
+					a(href='#')= obj.author

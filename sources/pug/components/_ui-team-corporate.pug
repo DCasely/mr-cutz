@@ -1,0 +1,10 @@
+mixin team-corporate(obj)
+	.team-corporate
+		figure.team-corporate-img
+			+jpg(obj.img)
+		.team-corporate-caption
+			h4.team-corporate-title: a(href='team-member-profile.html')= obj.title
+			p= obj.text
+			.divider
+			.team-corporate-link
+				a(href='mailto:#')= obj.link
